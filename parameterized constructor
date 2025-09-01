@@ -1,0 +1,38 @@
+package Com.nithya;
+class parametarized_constructor{
+    String Name;
+    String section;
+    int rollNo;
+    parametarized_constructor(){
+        System.out.println("Default Constructor"); // Default constructor with no parameters
+    }
+    parametarized_constructor(String Name){
+            System.out.println("Hi "+ Name); // One parameterized constructor
+    }
+    parametarized_constructor(String Name,String section){
+        System.out.println("Hi "+Name + " Welcome to "+section); // Two parameterized constructor
+        
+    }
+    parametarized_constructor(String Name,String section,int rollNo){
+        System.out.println("Hi "+Name + " Your Roll No: "+rollNo); // Three parameterized constructor
+        
+    }
+}
+
+public class constructor {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        parametarized_constructor con = new parametarized_constructor();  //no parameters
+        parametarized_constructor p1con = new parametarized_constructor("nithya");  //one parameters
+        parametarized_constructor p2con = new parametarized_constructor("nithya","CSE_E");  //two parameters
+        parametarized_constructor p3con = new parametarized_constructor("nithya","CSE_E",u9);  //three parameters
+    }
+}
+
+
+OUTPUT:
+Default Constructor
+Hi nithya
+Hi nithya Welcome to CSE_E
+Hi nithya Your Roll No: u9
