@@ -1,0 +1,49 @@
+package Com.nithya;
+
+public class bankacc2 {
+    private String accHolderName;
+    private double balance = 100;
+
+    // Setter for account holder name
+    public void setAccHolderName(String name) {
+        this.accHolderName = name;
+    }
+
+    // Getter for account holder name
+    public String getAccHolderName() {
+        return accHolderName;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit success");
+        } else {
+            System.out.println("Invalid amount");
+        }
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        bankacc2 acc = new bankacc2();
+
+        acc.setAccHolderName("nithya");
+        acc.deposit(500);
+        acc.deposit(-5);  // invalid deposit test
+
+        System.out.println("Account holder: " + acc.getAccHolderName());
+        System.out.println("Balance: " + acc.getBalance());
+    }
+}
+
+OUTPUT:
+Deposit success
+Invalid amount
+Account holder: nithya
+Balance: 600.0
