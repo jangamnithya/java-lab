@@ -1,4 +1,4 @@
-package Com.r9;
+package Com.u9;
 public class CommonElements {
     public static void main(String[] args) {
         String[] arr1 = {"apple", "banana", "cherry", "mango"};
