@@ -1,0 +1,52 @@
+package demo5u9;
+class RbiBank{
+	public double getRateOfInterset() {
+		return 5.0;
+	}	
+	}
+	class SBI extends RbiBank{
+		//method override
+	
+		public double getRateOfInterset() {
+			return 6.5;
+	}	}
+	class ICICI extends RbiBank{
+	@Override
+	public double getRateOfInterset() {
+		return 7.5;
+	}	
+	}
+	class Axis extends RbiBank{
+		public double getRateOfInterset() {
+			return 1.2;
+		}
+		
+		}
+	
+	
+	
+	
+public class Bank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+RbiBank rb=new RbiBank();
+RbiBank rb1=new SBI();
+SBI sbi=new SBI();
+ICICI ic1=new ICICI();
+Axis ax=new Axis();
+
+System.out.println("RBI rate of interset"+rb.getRateOfInterset());
+System.out.println("SBI rate of interset"+sbi.getRateOfInterset());
+System.out.println("ICICI rate of interset"+ic1.getRateOfInterset());
+System.out.println("AXIS rate of interset"+ +ax.getRateOfInterset());
+
+	}
+	
+
+}
+OUTPUT:RBI rate of interset5.0
+SBI rate of interset6.5
+ICICI rate of interset7.5
+AXIS rate of interset1.2
+
