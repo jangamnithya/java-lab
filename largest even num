@@ -1,0 +1,55 @@
+package assingprg;
+
+import java.util.*;
+
+public class Largeven {
+    public static void main(String[] args) {
+        String input = "abc1234567890xyz456";  
+        System.out.println(findLargestEvenNumber(input));
+    }
+
+    public static String findLargestEvenNumber(String str) {
+        // Use a TreeSet with reverse order to store unique digits sorted descending
+        TreeSet<Integer> digitsSet = new TreeSet<>(Collections.reverseOrder());
+
+        // Extract digits and add to the set
+        for (char ch : str.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                digitsSet.add(ch - '0');
+            }
+        }
+
+        if (digitsSet.isEmpty()) {
+            return "-1"; // no digits
+        }
+
+        // Convert to list for easier manipulation
+        List<Integer> digits = new ArrayList<>(digitsSet);
+
+        // Find the smallest even digit to use as the last digit of the number
+        Integer lastDigit = null;
+        for (int i = digits.size() - 1; i >= 0; i--) { 
+            if (digits.get(i) % 2 == 0) {
+                lastDigit = digits.get(i);
+                digits.remove(i);
+                break;
+            }
+        }
+
+        if (lastDigit == null) {
+            return "-1"; // no even digit found
+        }
+
+        // Build the result string: all digits except lastDigit (descending order) + lastDigit
+        StringBuilder sb = new StringBuilder();
+        for (int d : digits) {
+            sb.append(d);
+        }
+        sb.append(lastDigit);
+
+        return sb.toString();
+    }
+}
+
+output:
+9876543210
